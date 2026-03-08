@@ -53,14 +53,14 @@ def record_mic():
         time.sleep(0.1)
     except KeyboardInterrupt:
         stop_listening(wait_for_stop=False)
-        
+
 
 DEVICE_INDEX = 10
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
-CHUNK = 1024  
-RECORD_SECONDS = 5  
+CHUNK = 1024 
+RECORD_SECONDS = 5
 OUTPUT_DIR = "recorded_wavs"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
