@@ -9,7 +9,6 @@ p = pyaudio.PyAudio()
 
 rec = sr.Recognizer()
 
-
 def record_mic():
     data_queue = Queue()
     
@@ -55,9 +54,9 @@ def record_mic():
         stop_listening(wait_for_stop=False)
 
 
-DEVICE_INDEX = 10
+DEVICE_INDEX = 13
 FORMAT = pyaudio.paInt16
-CHANNELS = 1
+CHANNELS = 8
 RATE = 44100
 CHUNK = 1024 
 RECORD_SECONDS = 5
@@ -103,9 +102,10 @@ def convert_to_wav(frames):
 
 
 def main():
-    file_name = record_audio()
-    print(f"Recorded audio saved as: {file_name}")
-    
+    while True:
+        file_name = record_audio()
+        print(f"Recorded audio saved as: {file_name}")
+        
 
 if __name__ == '__main__':
     main()
